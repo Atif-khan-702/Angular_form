@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.container-fluid {
+    width: 60%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 500px) {
+    .container-fluid {
+        width: 100%;
+    }
+  }

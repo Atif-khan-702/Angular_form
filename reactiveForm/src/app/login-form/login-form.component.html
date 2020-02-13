@@ -1,0 +1,227 @@
+<div class="container-fluid">
+    <div class="form">
+        <div class="card2_heading">
+            <h4 id="form_heading">Student Registration Form</h4>
+        </div>
+    <form [formGroup]="loginForm">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Name:</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <input [class.is-invalid]="fname.invalid && fname.touched" formControlName="fname" type="text" class="form-control" placeholder="Enter First Name">
+                    <div *ngIf="fname.invalid && fname.touched">
+                        <small class="text-danger" *ngIf="fname.errors?.required">First Name is required</small>
+                        <small class="text-danger"  *ngIf="fname.errors?.minlength">First Name must be atleast 3 character</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input [class.is-invalid]="lname.invalid && lname.touched" formControlName="lname" type="text" class="form-control" placeholder="Enter Last Name">
+                    <div *ngIf="lname.invalid && lname.touched">
+                        <small class="text-danger" *ngIf="lname.errors?.required">Last Name is required</small>
+                        <small class="text-danger"  *ngIf="lname.errors?.minlength">Last Name must be atleast 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+             <div class="row">
+                <div class="col-md-2">
+                    <label>Father Name</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="fatherName" placeholder="Enter Father Name">
+                    <div *ngIf="fatherName.invalid && fatherName.touched">
+                        <small class="text-danger" *ngIf="fatherName.errors?.required">Father Name is required</small>
+                        <small class="text-danger"  *ngIf="fatherName.errors?.minlength">Father Name must be atleast 3 character</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Mother Name</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="motherName"  placeholder="Enter Father Name">
+                    <div *ngIf="motherName.invalid && motherName.touched">
+                        <small class="text-danger" *ngIf="motherName.errors?.required">Mother Name is required</small>
+                        <small class="text-danger"  *ngIf="motherName.errors?.minlength">Mother Name must be atleast 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>gender</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" formControlName="gender">
+                        <option value="">--select--</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div *ngIf="gender.invalid && gender.touched">
+                        <small class="text-danger" *ngIf="gender.errors?.required">Gender is required</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Adhar</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="adhar"  placeholder="Enter Adhar Number">
+                    <div *ngIf="adhar.invalid && adhar.touched">
+                        <small class="text-danger" *ngIf="adhar.errors?.required">Adhar is required</small>
+                        <small class="text-danger"  *ngIf="adhar.errors?.minlength">Adhar must be of 12 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>DOB</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="date" class="form-control" formControlName="DOB">
+                    <div *ngIf="DOB.invalid && DOB.touched">
+                        <small class="text-danger" *ngIf="DOB.errors?.required">DOB is required</small>
+                        <small class="text-danger"  *ngIf="DOB.errors?.minlength"></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4>Credentials:</h4>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>User Name</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter UserName" class="form-control" formControlName="userName">
+                    <div *ngIf="userName.invalid && userName.touched">
+                        <small class="text-danger" *ngIf="userName.errors?.required">userName is required</small>
+                        <small class="text-danger"  *ngIf="userName.errors?.minlength">UserName must be atleast 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Password</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter Password" class="form-control" formControlName="password">
+                    <div *ngIf="password.invalid && password.touched">
+                        <small class="text-danger" *ngIf="password.errors?.required">password is required</small>
+                        <small class="text-danger"  *ngIf="password.errors?.minlength">password must be atleast 3 character</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Confirm Password</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter Password" class="form-control" formControlName="cnf_pass">
+                    <div *ngIf="cnf_pass.invalid && cnf_pass.touched">
+                        <small class="text-danger" *ngIf="cnf_pass.errors?.required">password is required</small>
+                        <small class="text-danger"  *ngIf="cnf_pass.errors?.minlength">password must be atleast 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4>Contact Information:</h4>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter Email" class="form-control" formControlName="email">
+                    <div *ngIf="email.invalid && email.touched">
+                        <small class="text-danger" *ngIf="email.errors?.required">Email is required</small>
+                        <small class="text-danger"  *ngIf="email.errors?.minlength">Email must be atleast 3 character</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Phone</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter Phone" class="form-control" formControlName="phone">
+                    <div *ngIf="phone.invalid && phone.touched">
+                        <small class="text-danger" *ngIf="phone.errors?.required">Phone is required</small>
+                        <small class="text-danger"  *ngIf="phone.errors?.minlength">phone must be of 10 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4>Address:</h4>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Country:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter Country" class="form-control" formControlName="country">
+                    <div *ngIf="country.invalid && country.touched">
+                        <small class="text-danger" *ngIf="country.errors?.required">Country is required</small>
+                        <small class="text-danger"  *ngIf="country.errors?.minlength">Country must be atleast 3 character</small>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>State:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter State" class="form-control" formControlName="state">
+                    <div *ngIf="state.invalid && state.touched">
+                        <small class="text-danger" *ngIf="state.errors?.required">State is required</small>
+                        <small class="text-danger"  *ngIf="state.errors?.minlength">State must be of 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>City:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Enter City" class="form-control" formControlName="city">
+                    <div *ngIf="city.invalid && city.touched">
+                        <small class="text-danger" *ngIf="city.errors?.required">City is required</small>
+                        <small class="text-danger"  *ngIf="city.errors?.minlength">City must be atleast 3 character</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary btn-block" type="button">Update</button>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary btn-block" type="button">Register</button>
+                </div>
+
+            </div>
+            
+        </div>
+    </form>
+    </div>
+</div>
